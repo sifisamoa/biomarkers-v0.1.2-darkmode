@@ -1,0 +1,32 @@
+/* Already using dark theme variables, so just minor adjustments */
+.modal-backdrop {
+    /* No changes needed, already dark themed */
+}
+
+.modal-content {
+    /* No changes needed, already dark themed */
+}
+
+.modal-close-button {
+  /* No changes needed, already dark themed */
+}
+.modal-close-button:hover {
+  /* No changes needed, already dark themed */
+}
+
+.modal-content table {
+    /* No changes needed */
+}
+
+.modal-content th,
+.modal-content td {
+    /* No changes needed */
+}
+
+.modal-content th {
+    /* No changes needed */
+}
+
+.modal-button-container {
+    /* No changes needed */
+}

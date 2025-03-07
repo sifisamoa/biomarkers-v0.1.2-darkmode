@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background-color: #0e0f19; /* Dark background */
+  --card-background: #1b1c2a; /* Dark card background */
+  --primary-accent: #8a2be2; /* Vibrant purple */
+  --secondary-accent: #ff69b4; /* Lighter pink */
+  --text-primary: #ffffff; /* White text */
+  --text-secondary: #c5c6d0; /* Light gray text */
+  --table-header-bg: #3a3b4d; /* Darker table header */
+  --table-row-hover-bg: #4a4b5d; /* Darker row hover */
+  --table-row-stripe-bg: #242535; /* Very subtle stripe */
+  --button-gradient-1: #8a2be2; /* Purple */
+  --button-gradient-2: #ff69b4; /* Pink */
+  --button-hover-1: #7b29c9;   /* Darker purple (hover start) */
+  --button-hover-2: #ff1493; /* Darker pink (hover end) */
+  --input-background: #2a2b3c; /* Dark input background */
+  --input-border: #3a3b4d; /* Dark input border */
+  --input-focus: #8a2be2; /* Purple focus */
+  --modal-backdrop: rgba(0, 0, 0, 0.7); /* Darker modal backdrop */
+  --modal-content: #1b1c2a; /* Dark modal content */
+  --delete-button: #e74c3c; /* Red for delete */
+  --delete-button-hover: #c0392b; /* Darker red on hover */
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.app-container {
+  max-width: 95%;
+  width: 1024px;
+  margin: 30px auto;
+  padding: 25px;
+  background: var(--card-background);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+
+h1, h2, h3 {
+  color: var(--text-primary);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 12px 18px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    background-color: var(--input-background); /* Darker background */
+    display: block;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Darker shadow */
+}
+
+/* General Button Style */
+.btn-primary {
+  background: linear-gradient(135deg, var(--button-gradient-1) 0%, var(--button-gradient-2) 100%);
+  color: white;
+  padding: 12px 22px;
+  margin: 8px 5px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--button-hover-1) 0%, var(--button-hover-2) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Darker shadow */
+}
+
+.btn-delete {
+    background-color: var(--delete-button);
+    color: white;
+    padding: 12px 22px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.btn-delete:hover {
+    background-color: var(--delete-button-hover);
+}
+
+/* Input and Textarea Styles */
+input[type="number"],
+input[type="date"],
+input[type="text"],
+textarea {
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 25px;
+  font-size: 16px;
+  width: calc(100% - 26px);
+  box-sizing: border-box;
+  background-color: var(--input-background);
+  font-family: 'Poppins', sans-serif;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  color: var(--text-secondary); /* Light gray text */
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.5);  /*  focus */
+    border-color: var(--input-focus);
+    outline: none;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Table Styles */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  border-radius: 8px; /* Subtle rounded corners for the whole table */
+  overflow: hidden; /* Ensures rounded corners are visible */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+.table-container th,
+.table-container td {
+  padding: 14px 18px; /* Increased padding */
+  border: 1px solid var(--input-border);
+  text-align: left;
+  background-color: var(--card-background);
+  color: var(--text-secondary);
+}
+
+.table-container th {
+  background-color: var(--table-header-bg);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Subtle Striping */
+.table-container tr:nth-child(even) {
+  background-color: var(--table-row-stripe-bg);
+}
+
+.table-container tr:hover td {
+  background-color: var(--table-row-hover-bg);
+  color: var(--text-primary);
+}
+
+
+/* Chart Container */
+.chart-container {
+  background: var(--card-background);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  transition: box-shadow 0.3s ease;
+  border: 1px solid var(--input-border);
+}
+
+.chart-container:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+
+/* Form Container */
+.biomarker-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    background: var(--card-background);
+    border: 1px solid var(--input-border);
+}
+
+.biomarker-form h2 {
+    grid-column: 1 / -1;
+}
+
+.biomarker-form label {
+    display: flex;
+    flex-direction: column;
+}
+
+/* History Container */
+.history-container {
+    padding: 25px;
+}
+
+.history-container select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid var(--input-border);
+  font-size: 16px;
+  background-color: var(--input-background);
+  font-family: 'Poppins', sans-serif;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.history-container select:focus {
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.5);  /*  focus */
+    border-color: var(--input-focus);
+    outline: none;
+}
+
+/* Remove number input scroll */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-backdrop);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.modal-content {
+    background: var(--modal-content);
+    border-radius: 15px; /* Rounded Corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    width: 700px; /* Fixed width, slightly smaller than app-container */
+    max-width: 90%;  /* Still responsive, but with a max */
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative; /* For close button positioning */
+}
+
+/* Hide scrollbar but allow scrolling */
+.modal-content::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+.modal-content {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.modal-close-button {
+  background: transparent; /* Make consistent with other buttons */
+  border: none;
+  font-size: 1.2em; /* Adjust as needed */
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 5px 10px;
+  border-radius: 50px; /* Consistent with other buttons */
+}
+.modal-close-button:hover {
+  background-color: rgba(255,255,255, 0.1)
+}
+
+.modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+     border-radius: 8px; /* Subtle rounded corners for the whole table */
+  overflow: hidden;
+}
+
+.modal-content th,
+.modal-content td {
+    padding: 8px 12px;
+    border: 1px solid var(--input-border);
+    text-align: left;
+}
+
+.modal-content th {
+    background-color: var(--table-header-bg);
+}
+
+.modal-button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 20px; /* Space from table */
+    gap: 10px;
+}
+
+
+.table-container td {
+    /* No changes needed */
+}
+  .table-container button {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+
+  .table-container button:hover {
+    background-color: #2980b9;
+  }
+
+  .table-container textarea {
+    width: 90%;
+    min-height: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+    .dashboard-container {
+    min-height: 500px; /* Ensure the container has some height */
+}
+
+.chart-and-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    width: 100%;
+}
+
+.dashboard-container h2 + p {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+
+
+.chart-container select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid var(--input-border);
+  font-size: 16px;
+  background-color: var(--input-background);
+  font-family: 'Poppins', sans-serif;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  color: var(--text-secondary);
+  width: 100%;
+  max-width: 300px;
+}
+
+.chart-container select:focus {
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.5);  /*  focus */
+    border-color: var(--input-focus);
+    outline: none;
+}

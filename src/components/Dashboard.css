@@ -1,0 +1,16 @@
+.dashboard-container {
+    min-height: 500px; /* Ensure the container has some height */
+}
+
+.chart-and-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    width: 100%;
+}

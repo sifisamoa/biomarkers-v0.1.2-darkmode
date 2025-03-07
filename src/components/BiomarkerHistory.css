@@ -1,0 +1,46 @@
+/* Already using dark theme variables, so just minor adjustments */
+.history-container {
+    /* No changes needed */
+}
+
+  .chart-container {
+    /* No changes needed */
+  }
+
+  .chart-container select {
+    /* No changes needed */
+  }
+
+  .table-container table {
+   /* No changes needed */
+}
+
+.table-container th,
+.table-container td {
+  /* No changes needed */
+}
+
+.table-container th {
+  /* No changes needed */
+}
+
+/* Remove old hover styles */
+.table-container tr {
+    /* No changes needed */
+}
+
+.table-container td {
+    /* No changes needed */
+}
+
+  .table-container button {
+    /* No changes needed */
+  }
+
+  .table-container button:hover {
+    /* No changes needed */
+  }
+
+  .table-container textarea {
+    /* No changes needed */
+  }
